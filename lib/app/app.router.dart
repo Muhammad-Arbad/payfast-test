@@ -17,22 +17,13 @@ class Routes {
 
   static const webViewScreen = '/web-view-screen';
 
-  static const all = <String>{
-    amountView,
-    webViewScreen,
-  };
+  static const all = <String>{amountView, webViewScreen};
 }
 
 class StackedRouter extends _i1.RouterBase {
   final _routes = <_i1.RouteDef>[
-    _i1.RouteDef(
-      Routes.amountView,
-      page: _i2.AmountView,
-    ),
-    _i1.RouteDef(
-      Routes.webViewScreen,
-      page: _i3.WebViewScreen,
-    ),
+    _i1.RouteDef(Routes.amountView, page: _i2.AmountView),
+    _i1.RouteDef(Routes.webViewScreen, page: _i3.WebViewScreen),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
@@ -46,11 +37,12 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<WebViewScreenArguments>(nullOk: false);
       return _i4.MaterialPageRoute<dynamic>(
         builder: (context) => _i3.WebViewScreen(
-            key: args.key,
-            token: args.token,
-            basketId: args.basketId,
-            amount: args.amount,
-            merchant: args.merchant),
+          key: args.key,
+          token: args.token,
+          basketId: args.basketId,
+          amount: args.amount,
+          merchant: args.merchant,
+        ),
         settings: data,
       );
     },
@@ -113,13 +105,15 @@ extension NavigatorStateExtension on _i5.NavigationService {
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
+    transition,
   ]) async {
-    return navigateTo<dynamic>(Routes.amountView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
+    return navigateTo<dynamic>(
+      Routes.amountView,
+      id: routerId,
+      preventDuplicates: preventDuplicates,
+      parameters: parameters,
+      transition: transition,
+    );
   }
 
   Future<dynamic> navigateToWebViewScreen({
@@ -132,19 +126,22 @@ extension NavigatorStateExtension on _i5.NavigationService {
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
+    transition,
   }) async {
-    return navigateTo<dynamic>(Routes.webViewScreen,
-        arguments: WebViewScreenArguments(
-            key: key,
-            token: token,
-            basketId: basketId,
-            amount: amount,
-            merchant: merchant),
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
+    return navigateTo<dynamic>(
+      Routes.webViewScreen,
+      arguments: WebViewScreenArguments(
+        key: key,
+        token: token,
+        basketId: basketId,
+        amount: amount,
+        merchant: merchant,
+      ),
+      id: routerId,
+      preventDuplicates: preventDuplicates,
+      parameters: parameters,
+      transition: transition,
+    );
   }
 
   Future<dynamic> replaceWithAmountView([
@@ -152,13 +149,15 @@ extension NavigatorStateExtension on _i5.NavigationService {
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
+    transition,
   ]) async {
-    return replaceWith<dynamic>(Routes.amountView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
+    return replaceWith<dynamic>(
+      Routes.amountView,
+      id: routerId,
+      preventDuplicates: preventDuplicates,
+      parameters: parameters,
+      transition: transition,
+    );
   }
 
   Future<dynamic> replaceWithWebViewScreen({
@@ -171,18 +170,21 @@ extension NavigatorStateExtension on _i5.NavigationService {
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
+    transition,
   }) async {
-    return replaceWith<dynamic>(Routes.webViewScreen,
-        arguments: WebViewScreenArguments(
-            key: key,
-            token: token,
-            basketId: basketId,
-            amount: amount,
-            merchant: merchant),
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
+    return replaceWith<dynamic>(
+      Routes.webViewScreen,
+      arguments: WebViewScreenArguments(
+        key: key,
+        token: token,
+        basketId: basketId,
+        amount: amount,
+        merchant: merchant,
+      ),
+      id: routerId,
+      preventDuplicates: preventDuplicates,
+      parameters: parameters,
+      transition: transition,
+    );
   }
 }

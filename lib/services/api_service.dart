@@ -8,7 +8,8 @@ class ApiService {
     try {
       // Replace with your actual API endpoint
       final response = await _dio.post(
-        'https://ipg1.apps.net.pk/Ecommerce/api/Transaction/GetAccessToken',
+        'https://ipguat.apps.net.pk/Ecommerce/api/Transaction/GetAccessToken',
+        // 'https://ipg1.apps.net.pk/Ecommerce/api/Transaction/GetAccessToken',
         data: {
           'MERCHANT_ID': merchantId,
           'SECURED_KEY': securedKey,

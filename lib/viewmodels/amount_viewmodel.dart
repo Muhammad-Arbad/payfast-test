@@ -24,7 +24,7 @@ class AmountViewModel extends BaseViewModel {
     notifyListeners();
 
     String merchant_id = "102";
-    String client_secret = "asdasdasd";
+    String client_secret = "zWHjBp2AlttNu1sK";
     try {
       final amount = double.parse(amountController.text);
       final basketId = Random().nextInt(10000).toString();
@@ -36,7 +36,7 @@ class AmountViewModel extends BaseViewModel {
             token: token,
             amount: amount,
             basketId: basketId,
-            merchant: "24752"),
+            merchant: "102"),
       );
     } catch (e) {
       debugPrint('Error: $e');
